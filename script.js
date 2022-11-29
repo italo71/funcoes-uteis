@@ -136,3 +136,32 @@ function mphone(v) {
     }
     return r;
 }
+
+//tables, tabelas, tabela
+//ajuste, formatação, organizar
+function ajuste() {
+    j('#tabela_pr').DataTable();
+    j('#tabela_pr').DataTable().columns.adjust();
+}
+
+// preencher tabela, tabela
+table_exec = () => {
+    j('#tabela_pr').DataTable();
+    j('#tabela_pr').DataTable().clear();
+    j('#tabela_pr').DataTable().rows().invalidate().draw();
+    j('#tabela_pr').DataTable().destroy();
+    var tabela_default_order = [0, "asc"];
+    var table = j('#tabela_pr').DataTable({
+        fixedHeader: true,
+        "autoWidth": false,
+        "order": [tabela_default_order],
+        "ordering": true,
+        "scrollX": false,
+        "scrollY": "60vh",
+        "scrollCollapse": false,
+        "paging": true,
+        "language": datatable_pt_br,
+        "lengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]],
+        "pageLength": 10
+    });
+}
