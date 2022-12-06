@@ -81,6 +81,7 @@ function pesquisacep(cep) {
                         document.getElementById('bairro').value = data.bairro
                         document.getElementById('endereco').value = data.logradouro
                         document.getElementById('uf').value = data.uf
+                        console.log(`${data.logradouro}, ${data.bairro}`)
                     });
             }).then((data) => {
             }).catch((err) => { });
@@ -165,3 +166,23 @@ table_exec = () => {
         "pageLength": 10
     });
 }
+
+//Timer, temporizador, cronometro
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = minutes + ":" + seconds; // o display pode ser uma div, span, p
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+window.onload = function () {
+    var duration = 60 * 5; // Converter para segundos
+        display = document.querySelector('#timer'); // selecionando o timer
+    startTimer(duration, display); // iniciando o timer
+};
