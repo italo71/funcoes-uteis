@@ -183,7 +183,7 @@ function startTimer(duration, display) {
 }
 window.onload = function () {
     var duration = 60 * 5; // Converter para segundos
-        display = document.querySelector('#timer'); // selecionando o timer
+    display = document.querySelector('#timer'); // selecionando o timer
     startTimer(duration, display); // iniciando o timer
 };
 //validador de celular/telefone
@@ -214,4 +214,12 @@ function telefone_validation(telefone) {
     if (codigosDDD.indexOf(parseInt(telefone.substring(0, 2))) == -1) return false;
     //se passar por todas as validações acima, então está tudo certo
     return true;
+}
+//Copiar textp, copiar, input, copy
+function copiarTexto(id) {
+    //obj deve ser um input, caso queira usar em uma textarea tranferir o seu conteudo para um input
+    textoCopiado.value = document.getElementById(id).value;
+    textoCopiado.select();
+    document.execCommand("copy");
+    textoCopiado.style.display = 'none'
 }
