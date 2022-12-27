@@ -223,3 +223,6 @@ function copiarTexto(id) {
     document.execCommand("copy");
     textoCopiado.style.display = 'none'
 }
+
+//Aceitar apenas numeros no input, onlynumber, somente numeros
+//onkeypress="return event.charCode >= 48 && event.charCode <= 57"
