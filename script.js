@@ -226,3 +226,7 @@ function copiarTexto(id) {
 
 //Aceitar apenas numeros no input, onlynumber, somente numeros
 //onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+
+//formatador de moedas
+let valor = 12312.1321
+let moeda = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(valor);
